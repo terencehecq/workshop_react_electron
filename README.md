@@ -13,8 +13,8 @@
 
 - Initialiser le projet
 
-        npx create-react-app <nom-du-dossier>
-        cd <nom-du-dossier>
+        npx create-react-app electron-react
+        cd electron-react
 
 -   Installer **Electron**, **concurrently** & **wait-on**
 
@@ -22,7 +22,7 @@
 
 - Télécharger [le son "click"](https://raw.githubusercontent.com/terencehecq/workshop_react_electron/dev/Projet/src/click.wav) pour le métronome
 
-        Click droit -> Enregistrer sous... -> <nom-du-dossier> -> src
+        Click droit -> Enregistrer sous... -> electron-react -> src
 
 
 ## 1. 
