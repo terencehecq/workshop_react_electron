@@ -13,3 +13,50 @@ footer {
   position: fixed;
   bottom: 5px;
 }
+.metronome {
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.bpm-slider {
+  display: flex;
+  font-size: 2rem;
+}
+
+.bpm-slider input {
+  width: 100%;
+  margin: 8px 20px;
+  height: 3rem;
+  align-self: center;
+}
+
+.metronome button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 3rem;
+  height: 100%;
+}
+
+.metronome button.startStop img {
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+.bpm-measure button {
+  background: rgb(78, 78, 78);
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #424242;
+  border-radius: 2px;
+  width: 100px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.metronome button.active {
+  background-color: rgb(141, 141, 141);
+  border-color: #777777;
+}
