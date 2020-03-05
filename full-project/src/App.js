@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
+import useInterval from './my_hooks'
+
 import soundFile1 from './assets/click1.wav';
 import soundFile2 from './assets/click2.wav';
 import play from './assets/play.png';
 import pause from './assets/pause.png';
-import useInterval from './my_hooks'
 
 const App = () => {
   const [beat, setBeat] = useState(100);
@@ -36,14 +37,13 @@ const App = () => {
     setMeasure({count: 0, pulse: pulse})
   }
 
-  const startStop = (e) => {
+  const startStop = () => {
     if(!playing){
       setMeasure({count: 0, pulse: measure.pulse})
       setPlaying(true);
     }else {
       setPlaying(false)
     }
-
   }
   
   const playClick = () => {
@@ -54,7 +54,6 @@ const App = () => {
       click2.currentTime = 0;
       click2.play();
     }
-
     setMeasure({ 
       count: (measure.count + 1) % measure.pulse, 
       pulse : measure.pulse
@@ -64,7 +63,7 @@ const App = () => {
   useInterval(()=> {
     if(playing) {
       playClick(); 
-    }}, ((60 / beat) * 1000))
+    }}, 60000 / beat)
   
   return (
     <div className="metronome">
@@ -82,7 +81,7 @@ const App = () => {
       <button className="startStop" onClick={startStop}>
         <img src={playing ? pause : play} alt="play/pause"></img>
       </button>
-      <div className="bpm-pulse">
+      <div className="bpm-measure">
         <h4>Mesure : </h4>
         <button onClick={(e)=>{handlePulse(e, 2)}}>2</button>
         <button onClick={(e)=>{handlePulse(e, 3)}}>3</button>
