@@ -1,0 +1,1 @@
+## Communication avec la machine

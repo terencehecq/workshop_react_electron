@@ -1,7 +1,24 @@
 # Workshop React & Electron
 
-## Préparation
+## Présenté par :
 
+- [Loïc Lissens](https://github.com/LoicLissens)
+- [Denis Bourgeois](https://github.com/Debourgeo)
+- [Térence Hecq](https://github.com/terencehecq)
+
+
+
+## Table des matières : 
+
+- [Avant le workshop](#Avant-le-workshop)
+- [Introduction](#Introduction)
+- [A propos d'Electron](#A-propos-d'Electron)
+- [Le workshop](#Le-workshop)
+
+
+## Avant le workshop
+
+- [Télécharger notre dossier d'assets](https://raw.githubusercontent.com/terencehecq/workshop_react_electron/dev/Projet/src/click.wav) 
 -   Installer **Node.js** 
 -   Installer **create-react-app**
 
@@ -20,9 +37,24 @@
 
         npm install --save-dev electron concurrently wait-on
 
-- Télécharger [le son "click"](https://raw.githubusercontent.com/terencehecq/workshop_react_electron/dev/Projet/src/click.wav) pour le métronome
-
-        Click droit -> Enregistrer sous... -> electron-react -> src
 
 
-## 1. 
+## Introduction 
+
+Ce qu'il va se passer pendant le workshop bla bla bla 
+
+
+## A propos d'Electron
+
+C koi hélektron?
+
+
+## Le workshop
+
+[Suivre le fil conducteur](https://github.com/terencehecq/workshop_react_electron/tree/master/1.Initialisation)
+
+### Les étapes :
+1. [Initialiser le projet](https://github.com/terencehecq/workshop_react_electron/tree/master/1.Initialisation)
+2. [Communication avec la machine](https://github.com/terencehecq/workshop_react_electron/tree/master/2.Communication)
+3. [Le métronome](https://github.com/terencehecq/workshop_react_electron/tree/master/3.Métronome)
+4. [Exporter l'application](https://github.com/terencehecq/workshop_react_electron/tree/master/4.Exportation)
