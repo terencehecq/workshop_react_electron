@@ -18,7 +18,7 @@
 
 ## Avant le workshop
 
-- [Télécharger notre dossier d'assets](https://raw.githubusercontent.com/terencehecq/workshop_react_electron/dev/Projet/src/click.wav) 
+- [Télécharger notre dossier d'assets](ON DOIT FOUTRE LE LIEN ICI) 
 -   Installer **Node.js** 
 -   Installer **create-react-app**
 
@@ -51,10 +51,10 @@ C koi hélektron?
 
 ## Le workshop
 
-[Suivre le fil conducteur](https://github.com/terencehecq/workshop_react_electron/tree/master/1.Initialisation)
+[Suivre le fil conducteur](https://github.com/terencehecq/workshop_react_electron/tree/dev/1.Initialisation)
 
 ### Les étapes :
-1. [Initialiser le projet](https://github.com/terencehecq/workshop_react_electron/tree/master/1.Initialisation)
-2. [Communication avec la machine](https://github.com/terencehecq/workshop_react_electron/tree/master/2.Communication)
-3. [Le métronome](https://github.com/terencehecq/workshop_react_electron/tree/master/3.Métronome)
-4. [Exporter l'application](https://github.com/terencehecq/workshop_react_electron/tree/master/4.Exportation)
+1. [Initialiser le projet](https://github.com/terencehecq/workshop_react_electron/tree/dev/1.Initialisation)
+2. [Communication avec la machine](https://github.com/terencehecq/workshop_react_electron/tree/dev/2.Communication)
+3. [Le métronome](https://github.com/terencehecq/workshop_react_electron/tree/dev/3.Métronome)
+4. [Exporter l'application](https://github.com/terencehecq/workshop_react_electron/tree/dev/4.Exportation)
