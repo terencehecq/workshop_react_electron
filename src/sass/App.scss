@@ -1,0 +1,15 @@
+@import "libs/mixins";
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: orangered;
+  h1 {
+    color: white;
+  }
+  @include flex;
+}
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 5px;
+}

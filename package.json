@@ -1,0 +1,67 @@
+{
+  "name": "workshop_react_electron",
+  "version": "0.1.0",
+  "description": "Electron React Workshop",
+  "build": {
+    "appId": "com.electron.workshop",
+    "copyright": "2020 Workshop des barres",
+    "win": {
+      "target": "NSIS",
+      "icon": "build/icon.png"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "build/icon.icns"
+    },
+    "linux": {}
+  },
+  "author": {
+    "name": "joyeux lurons"
+  },
+  "homepage": "./",
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.1",
+    "@testing-library/user-event": "^7.2.1",
+    "cross-env": "^7.0.1",
+    "electron-is-dev": "^1.1.0",
+    "electron-reload": "^1.5.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.0"
+  },
+  "scripts": {
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test",
+    "react-eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-build": "electron-builder",
+    "electron-dev": "ELECTRON_START_URL=http://localhost:3000 electron .",
+    "dev": "concurrently \"BROWSER=none npm run react-start\" \" wait-on http://localhost:3000 && npm run electron\"",
+    "build": "npm run react-build && npm run electron-build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "electron": "^8.0.3",
+    "electron-builder": "^22.4.0",
+    "wait-on": "^4.0.1"
+  },
+  "main": "public/electron.js"
+}

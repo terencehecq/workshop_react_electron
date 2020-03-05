@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,OAAO,CAAC,kEAAI,CACZ,AAAA,IAAI,AAAC,CACH,WAAW,CAAE,oBAAoB,CACjC,gBAAgB,CAAE,SAAS,CCH3B,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,WAAW,CAAE,MAAM,CACnB,eAAe,CAAE,MAAM,CDKxB,AAPD,AAGE,IAHE,CAGF,EAAE,AAAC,CACD,KAAK,CAAE,KAAK,CACb,AAGH,AAAA,MAAM,AAAC,CACL,UAAU,CAAE,MAAM,CAClB,QAAQ,CAAE,KAAK,CACf,MAAM,CAAE,GAAG,CACZ",
+    "sources": [
+        "../sass/App.scss",
+        "../sass/libs/_mixins.scss"
+    ],
+    "names": [],
+    "file": "App.min.css"
+}
