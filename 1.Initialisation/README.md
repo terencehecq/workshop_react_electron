@@ -6,8 +6,11 @@ Si ce n'est pas déjà fait, vous pouvez retrouvez la marche à suivre [ici](htt
 
 ### 2. Mettre en place la structure du projet
 
-- Après l'initialisation, vous avez la structure d'un projet React, voici les dossiers et fichiers à rajouter :
+- Après l'initialisation, vous avez la structure d'un projet React, voici les dossiers et fichiers à rajouter **depuis le dossier téléchargé** :
 
+![Structure des fichiers](structure.png)
+
+<!-- 
         |- node_modules
         |- public
         |- src
@@ -24,7 +27,7 @@ Si ce n'est pas déjà fait, vous pouvez retrouvez la marche à suivre [ici](htt
         - .gitignore
         - package.json
         - README.md
-
+ -->
 
 ### 3. Définir ce qui va être rendu
 
@@ -41,7 +44,9 @@ mainWindow.loadURL('http://localhost:3000')
 
 ### 4. Le package.json
 
-- Dans les scripts, nous ajoutons **electron** et un script **dev** avec *concurrently* & *wait-on* qui vont nous permettre respectivement de lancer plusieurs scripts en même temps et d'attendre qu'une action soit terminée avant de lancer la suivante.
+- Dans les scripts, nous ajoutons **electron** et un script **dev** avec *concurrently* & *wait-on* qui vont nous permettre 
+1. De lancer plusieurs scripts en une seule commande
+2. D'attendre qu'une action soit terminée avant de lancer la suivante.
 
 ```json
 "scripts": {
