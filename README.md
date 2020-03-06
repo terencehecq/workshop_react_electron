@@ -7,7 +7,7 @@
 - [Térence Hecq](https://github.com/terencehecq)
 
 
-
+<!--  
 ## Table des matières : 
 
 - [Avant le workshop](#Avant-le-workshop)
@@ -15,6 +15,7 @@
 - [A propos d'Electron](#A-propos-d'Electron)
 - [Le workshop](#Le-workshop)
 
+ -->
 
 ## Avant le workshop
 
@@ -24,7 +25,7 @@
 
         npm install -g create-react-app
         
-    or
+    ou
 
         sudo npm install -g create-react-app
 
@@ -60,7 +61,7 @@ Pour en savoir plus, rendez-vous sur [leur site internet](https://www.electronjs
 
 ## Le workshop
 
-1. [Initialiser le projet](https://github.com/terencehecq/workshop_react_electron/tree/dev/1.Initialisation)
-2. [Communication avec la machine](https://github.com/terencehecq/workshop_react_electron/tree/dev/2.Communication)
-3. [Le métronome](https://github.com/terencehecq/workshop_react_electron/tree/dev/3.Métronome)
-4. [Exporter l'application](https://github.com/terencehecq/workshop_react_electron/tree/dev/4.Exportation)
+1. [Initialiser le projet](https://github.com/terencehecq/workshop_react_electron/tree/terence/1.Initialisation)
+2. [Communication avec la machine](https://github.com/terencehecq/workshop_react_electron/tree/terence/2.Communication)
+3. [Le métronome](https://github.com/terencehecq/workshop_react_electron/tree/terence/3.Métronome)
+4. [Exporter l'application](https://github.com/terencehecq/workshop_react_electron/tree/terence/4.Exportation)

@@ -29,7 +29,7 @@ Si ce n'est pas déjà fait, vous pouvez retrouvez la marche à suivre [ici](htt
         - README.md
  -->
 
-### 3. Définir ce qui va être rendu
+### 3. Définir le rendu
 
 - Dans le fichier **electron-starter.js**, trouver cette ligne
 
@@ -50,7 +50,7 @@ mainWindow.loadURL('http://localhost:3000')
 
 ```json
 "scripts": {
-    ...
+    // ...
     "electron": "electron .",
     "dev": "concurrently \"BROWSER=none npm start\" \" wait-on http://localhost:3000 && npm run electron\""
 },
