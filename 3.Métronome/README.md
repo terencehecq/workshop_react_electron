@@ -1,8 +1,8 @@
 ## Métronome en React
 
-### 1. La base
+### 1 - La base
 
-- Dans le dossier **src** créer un document **metronome.js** et on y importe les fichiers qui nous seront utiles : 
+- Dans le dossier **src**, on créée un document **metronome.js**, on y importe les fichiers qui nous seront utiles et on initialise le composant : 
 
 ```javascript
 import React, {useState} from 'react';
@@ -37,7 +37,7 @@ return(
 )
 ```
 
-#### 1.1 L'interface utilisateur
+#### 1.1 - L'interface utilisateur
 
 - Dans le composant Metronome de **metronome.js**, on met en place la partie 'HTML' :
 
@@ -96,7 +96,7 @@ const Metronome = () => {
 ```
 
 
-#### 1.3 Les fonctions
+#### 1.3 - Les fonctions
 
 - On écrit les fonctions **handleSlider** et **startStop**
 
@@ -114,7 +114,7 @@ const startStop = () => {
 };
 ```
 
-#### 1.4 Avec le son, c'est mieux !
+#### 1.4 - Avec le son, c'est mieux !
 
 - On définit les fichiers .wav importés comme des fichier Audio (on utilisera le 2e plus tard)
 - On écrit une fonction qui permet de **jouer le son** du click et de le **remettre à 0** avant d'être joué
@@ -140,9 +140,9 @@ useInterval(()=> {
 
 A ce stade, nous avons déjà un métronome fonctionnel mais pas très users friendly... Passons à l'étape suivante !
 
-### 2. Ajouter des boutons + et -
+### 2 - Ajouter des boutons + et -
 
-#### 2.1 Ajouter les boutons dans l'UI
+#### 2.1 - Ajouter les boutons dans l'UI
 
 - Avant l'input, nous plaçons le bouton "-" et après, le bouton "+" et nous définissons leurs **fonctions** respectives.
 
@@ -159,7 +159,7 @@ A ce stade, nous avons déjà un métronome fonctionnel mais pas très users fri
 </div>
 ```
 
-#### 2.2 Les fonctions 
+#### 2.2 - Les fonctions 
 
 - On écrit les fonctions **handleMinus** et **handlePlus** qui sont presque similaires.
 
@@ -174,9 +174,9 @@ const handlePlus = () => {
 ```
 
 
-### 3. Ajouter des mesures et un son différent sur le premier temps
+### 3 - Ajouter des mesures et un son différent sur le premier temps
 
-#### 3.1 Ajouter les boutons dans l'UI
+#### 3.1 - Ajouter les boutons dans l'UI
 
 - On ajoute 3 boutons qui définiront la mesure du métronome **juste avant la fermeture de la div**.
 
@@ -187,16 +187,16 @@ const handlePlus = () => {
         <h4>Mesure : </h4>
         <button>2</button>
         <button>3</button>
-        <button className="active">4</button>
+        <button>4</button>
     </div>
 </div>
 ```
 
 
-#### 3.2 Etat & évènement
+#### 3.2 - Etat & évènement
 
 - On définit l'**état** de la mesure comprenant le **nombre de pulsations** et un **compteur** afin de pouvoir détecter le premier temps et lui mettre un son différent.
-- On définit également l'évènement sur les boutons qui va gérer le **changement de mesure** et la valeur de chaque bouton.
+- On définit également l'**évènement** sur les boutons qui va gérer le changement de mesure et la **valeur** de chaque bouton.
 
 ```javascript
 const [measure, setMeasure] = useState({
@@ -210,7 +210,7 @@ const [measure, setMeasure] = useState({
 <button value="4" onClick={handlePulse}>4</button>
 ```
 
-#### 3.3 Gérer le changement de mesure
+#### 3.3 - Gérer le changement de mesure
 
 - On écrit la fonction **handlePulse** qui modifie l'état du composant. On définit le **compteur** sur 0 pour recommencer au début lors d'un changement de mesure et pour la **pulsation**, on lui attribue la valeur du bouton clické.
 
@@ -238,13 +238,25 @@ const playClick = () => {
 }
 ```
 
-- Finalement, dès qu'il y a une modification de l'état, nous allons devoir **recommencer la mesure à 0**. On modifie donc toutes les fonctions (sauf handlePulse et playClick) en leur ajoutant la même ligne :
+- Finalement, dès qu'il y a une modification de l'état, nous allons devoir **recommencer la mesure à 0**. On modifie donc toutes les fonctions sauf *handlePulse* et *playClick*
 
 ```javascript
-    setMeasure({count: 0, pulse: measure.pulse})
+    const handleSlider = (e) => {
+      setMeasure({count: 0, pulse: measure.pulse}) // ICI - idem 3x pour les fonctions "handleX"
+      setBeat(+e.target.value);
+  }
+
+  const startStop = () => {
+    if(!playing){
+      setMeasure({count: 0, pulse: measure.pulse}) // ICI 
+      setPlaying(true);
+    }else {
+      setPlaying(false)
+    }
+  }
 ```
 
-#### 3.4 Ajouter une class "active" à la mesure choisie
+#### 3.4 - Ajouter une class "active" à la mesure choisie
 
 - De base, la mesure est défine sur 4, on va donc mettre la **classe "active"** au bouton 4
 
