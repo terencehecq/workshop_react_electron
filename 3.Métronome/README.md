@@ -121,6 +121,7 @@ const startStop = () => {
 
 ```javascript
 const click1 = new Audio(soundFile1);
+const click2 = new Audio(soundFile2);
 ...
 const playClick = () => {
       click1.currentTime = 0;
@@ -189,4 +190,74 @@ const handlePlus = () => {
         <button className="active">4</button>
     </div>
 </div>
+```
+
+
+#### 3.2 Etat & évènement
+
+- On définit l'**état** de la mesure comprenant le **nombre de pulsations** et un **compteur** afin de pouvoir détecter le premier temps et lui mettre un son différent.
+- On définit également l'évènement sur les boutons qui va gérer le **changement de mesure** et la valeur de chaque bouton.
+
+```javascript
+const [measure, setMeasure] = useState({
+    count : 0,
+    pulse : 4
+  });
+```
+```html
+<button value="2" onClick={handlePulse}>2</button>
+<button value="3" onClick={handlePulse}>3</button>
+<button value="4" onClick={handlePulse}>4</button>
+```
+
+#### 3.3 Gérer le changement de mesure
+
+- On écrit la fonction **handlePulse** qui modifie l'état du composant. On définit le **compteur** sur 0 pour recommencer au début lors d'un changement de mesure et pour la **pulsation**, on lui attribue la valeur du bouton clické.
+
+```javascript
+const handlePulse = (e) => {
+    setMeasure({count: 0, pulse: + e.target.value})
+}
+```
+
+- Ensuite, on modifie la fonction **playClick** afin de jouer un son différent sur le premier temps.
+
+```javascript
+const playClick = () => {
+    if(measure.count % measure.pulse === 0) {
+        click1.currentTime = 0;
+        click1.play();
+    } else {
+        click2.currentTime = 0;
+        click2.play();
+    }
+    setMeasure({ 
+        count: (measure.count + 1) % measure.pulse, 
+        pulse : measure.pulse
+    });
+}
+```
+
+- Finalement, dès qu'il y a une modification de l'état, nous allons devoir **recommencer la mesure à 0**. On modifie donc toutes les fonctions (sauf handlePulse et playClick) en leur ajoutant la même ligne :
+
+```javascript
+    setMeasure({count: 0, pulse: measure.pulse})
+```
+
+#### 3.4 Ajouter une class "active" à la mesure choisie
+
+- De base, la mesure est défine sur 4, on va donc mettre la **classe "active"** au bouton 4
+
+```html
+<button value="4" onClick={handlePulse} className="active">4</button>
+```
+
+- Finalement, on modifie la fonction **handlePulse** pour enlever l'ancienne classe "active" et l'attribuer au bon bouton lors du click
+
+```javascript
+const handlePulse = (e) => {
+    document.querySelectorAll("button.active").forEach(button => button.classList.remove("active"))
+    e.target.classList.add("active")
+    setMeasure({count: 0, pulse: + e.target.value})
+  }
 ```

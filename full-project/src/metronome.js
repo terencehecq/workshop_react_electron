@@ -30,10 +30,10 @@ const Metronome = () => {
     setBeat(beat + 1)
   }
 
-  const handlePulse = (e, pulse) => {
+  const handlePulse = (e) => {
     document.querySelectorAll("button.active").forEach(button => button.classList.remove("active"))
     e.target.classList.add("active")
-    setMeasure({count: 0, pulse: pulse})
+    setMeasure({count: 0, pulse: + e.target.value})
   }
 
   const startStop = () => {
@@ -82,9 +82,9 @@ const Metronome = () => {
       </button>
       <div className="bpm-measure">
         <h4>Mesure : </h4>
-        <button onClick={(e)=>{handlePulse(e, 2)}}>2</button>
-        <button onClick={(e)=>{handlePulse(e, 3)}}>3</button>
-        <button className="active" onClick={(e)=>{handlePulse(e, 4)}}>4</button>
+        <button value="2" onClick={handlePulse}>2</button>
+        <button value="3" onClick={handlePulse}>3</button>
+        <button value="4" onClick={handlePulse} className="active">4</button>
       </div>
     </div>
   );
