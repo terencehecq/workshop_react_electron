@@ -1,18 +1,28 @@
 @import "libs/mixins";
+@import "libs/colors";
 @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+* {
+  outline: 0;
+}
 body {
   font-family: "Nunito", sans-serif;
-  background-color: orangered;
-  h1 {
-    color: white;
-  }
+  background-color: $bg-color;
+
   @include flex;
+  header {
+    position: relative;
+    h1 {
+      color: $base-color;
+      text-align: center;
+    }
+    img {
+      position: absolute;
+      height: 50px;
+      width: 50px;
+    }
+  }
 }
-footer {
-  text-align: center;
-  position: fixed;
-  bottom: 5px;
-}
+
 .metronome {
   text-align: center;
   max-width: 400px;
@@ -52,11 +62,29 @@ footer {
   border: 1px solid #424242;
   border-radius: 2px;
   width: 100px;
-  color: #fff;
+  color: $base-color;
   font-size: 20px;
 }
 
 .metronome button.active {
   background-color: rgb(141, 141, 141);
   border-color: #777777;
+}
+
+.navbar {
+  @include flex;
+  flex-direction: row;
+  margin: 50px;
+  .container-link {
+    border-radius: 5px;
+    border: solid 3px #6e5773;
+    margin: 10px;
+  }
+  .nav-link {
+    @include flex;
+    text-decoration: none;
+    color: $base-color;
+    padding: 5px;
+    text-align: center;
+  }
 }
