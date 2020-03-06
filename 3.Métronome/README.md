@@ -261,3 +261,5 @@ const handlePulse = (e) => {
     setMeasure({count: 0, pulse: + e.target.value})
   }
 ```
+
+Etape suivante : [exporter l'application](https://github.com/terencehecq/workshop_react_electron/tree/terence/4.Exportation)
