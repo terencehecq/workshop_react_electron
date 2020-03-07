@@ -3,9 +3,11 @@ const { app, BrowserWindow } = require("electron");
 const path = require("path");
 const os = require("os");
 
+let mainWindow;
+
 function createWindow() {
     // Create the browser window.
-    const mainWindow = new BrowserWindow({
+    mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
         webPreferences: {
@@ -18,16 +20,28 @@ function createWindow() {
 
     // Open the DevTools.
     mainWindow.webContents.openDevTools();
+}
 
-    mainWindow.webContents.on("did-finish-load", () => mainWindow.webContents.send("ping", os.type()));
-    mainWindow.webContents.on("did-finish-load", () => mainWindow.webContents.send("pong", os.arch()));
-    mainWindow.webContents.on("did-finish-load", () => mainWindow.webContents.send("pung", os.platform()));
+function sendSpecs() {
+    // Send hardware specs
+
+    mainWindow.webContents.on("dom-ready", () => {
+        mainWindow.webContents.send("type", os.type());
+        mainWindow.webContents.send("arch", os.arch());
+        mainWindow.webContents.send("platform", os.platform());
+        mainWindow.webContents.send("freemem", os.freemem());
+        mainWindow.webContents.send("totalmem", os.totalmem());
+        mainWindow.webContents.send("hostname", os.hostname());
+        mainWindow.webContents.send("userInfo", os.userInfo());
+        mainWindow.webContents.send("cpus", os.cpus());
+    });
 }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on("ready", createWindow);
+app.once("ready", sendSpecs);
 
 // Quit when all windows are closed.
 app.on("window-all-closed", function() {
@@ -45,4 +59,4 @@ app.on("activate", function() {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.7
 
-//extras
+// extras
