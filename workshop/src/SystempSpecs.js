@@ -15,7 +15,7 @@ const SystemSpecs = () => {
         platform: "",
         freemem: "",
         totalmem: "",
-        hostname: "you",
+        hostname: "",
         userInfo: {
             username: ""
         },
@@ -54,8 +54,8 @@ const SystemSpecs = () => {
                 <li>Architecture: {specs.arch}</li>
                 <li>Platforme: {specs.platform}</li>
                 <li>Nom du PC: {specs.hostname}</li>
-                <li>Mémoire totale: {convertToMb(specs.totalmem)} bytes</li>
-                <li>Mémoire restante: {convertToMb(specs.freemem)} bytes</li>
+                <li>Mémoire totale: {convertToMb(specs.totalmem)} mb</li>
+                <li>Mémoire restante: {convertToMb(specs.freemem)} mb</li>
                 {/* <li>Nom de l'utilisateur: {specs.userInfo}</li> */}
                 {/* {specs.userInfo.map(info => {
                     // if (info === "username") {
