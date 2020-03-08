@@ -10,53 +10,54 @@ const os = require("os");
 let mainWindow;
 
 function createWindow() {
-  //? Create the browser window.
-  mainWindow = new BrowserWindow({
-    width: 1000,
-    height: 800,
-    minWidth: 800,
-    minHeight: 480,
-    show: true,
+    //? Create the browser window.
+    mainWindow = new BrowserWindow({
+        width: 1000,
+        height: 800,
+        minWidth: 800,
+        minHeight: 480,
+        show: true,
 
-    webPreferences: {
-      preload: path.join(__dirname, "preload.js")
-    }
-  });
+        webPreferences: {
+            preload: path.join(__dirname, "preload.js")
+        }
+    });
 
-  mainWindow.loadURL(isDev ? "http://localhost:3000" : `file://${path.join(__dirname, "../build/index.html")}`);
+    mainWindow.loadURL(isDev ? "http://localhost:3000" : `file://${path.join(__dirname, "../build/index.html")}`);
 
-  //? Closed window event
-  mainWindow.on("closed", function() {
-    mainWindow = null;
-  });
+    //? Closed window event
+    mainWindow.on("closed", function() {
+        mainWindow = null;
+    });
+
+    mainWindow.webContents.openDevTools();
 }
 function sendSpecs() {
-  // Send hardware specs
+    // Send hardware specs
 
-  mainWindow.webContents.on("dom-ready", () => {
-    mainWindow.webContents.send("type", os.type());
-    mainWindow.webContents.send("arch", os.arch());
-    mainWindow.webContents.send("platform", os.platform());
-    mainWindow.webContents.send("freemem", os.freemem());
-    mainWindow.webContents.send("totalmem", os.totalmem());
-    mainWindow.webContents.send("hostname", os.hostname());
-    mainWindow.webContents.send("userInfo", os.userInfo());
-    mainWindow.webContents.send("cpus", os.cpus());
-  });
+    mainWindow.webContents.on("dom-ready", () => {
+        mainWindow.webContents.send("type", os.type());
+        mainWindow.webContents.send("arch", os.arch());
+        mainWindow.webContents.send("platform", os.platform());
+        mainWindow.webContents.send("freemem", os.freemem());
+        mainWindow.webContents.send("totalmem", os.totalmem());
+        mainWindow.webContents.send("hostname", os.hostname());
+    });
 }
 //* HANDLE LAUCNH AND QUIT APP
 //? Doing the folling action when app is ready
 app.on("ready", () => {
-  //? set window
-  createWindow();
-  mainWindow.maximize();
+    //? set window
+    createWindow();
+    sendSpecs();
+    mainWindow.maximize();
 });
-app.once("ready", sendSpecs);
+
 //? Quit when all windows are closed.
 app.on("window-all-closed", function() {
-  if (process.platform !== "darwin") app.quit();
+    if (process.platform !== "darwin") app.quit();
 });
 
 app.on("activate", function() {
-  if (mainWindow === null) createWindow();
+    if (mainWindow === null) createWindow();
 });
