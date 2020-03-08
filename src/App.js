@@ -2,6 +2,7 @@ import React from "react";
 import { Route, BrowserRouter as Router, Link, useRouteMatch } from "react-router-dom";
 import "./css/App.min.css";
 import Metronome from "./metronome";
+import SystemeSpec from "./systemespec";
 
 import metronomeImg from "./assets/metronome.svg";
 import systemeImg from "./assets/systeme.svg";
@@ -25,7 +26,7 @@ function App() {
               </Link>
             </div>
             <div className="container-link">
-              <Link className="nav-link" to="/systemespecs">
+              <Link className="nav-link" to="/systemespec">
                 Systemespecs
                 <img src={systemeImg} />
               </Link>
@@ -33,6 +34,9 @@ function App() {
           </nav>
           <Route path="/metronome">
             <Metronome />
+          </Route>
+          <Route path="/systemespec">
+            <SystemeSpec />
           </Route>
         </Router>
       </main>
