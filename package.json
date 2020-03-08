@@ -13,7 +13,9 @@
       "target": "dmg",
       "icon": "build/icon.icns"
     },
-    "linux": {}
+    "linux": {
+      "icon": "build/icon.png"
+    }
   },
   "author": {
     "name": "joyeux lurons"
