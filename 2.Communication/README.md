@@ -63,20 +63,17 @@ return (
 const channels = ["type", "arch", "platform", "freemem", "totalmem", "hostname"];
 
 const convertToMb = number => {
-    const mb = number / 1048576;
-    const rounded = mb.toFixed(1);
-    return `${rounded} bytes`;
+    if (Number.isInteger(number)) {
+        const mb = number / 1048576; // one megabyte = 1.048.576 bytes
+        const rounded = mb.toFixed(1);
+        return `${rounded} mb`;
+    } else {
+        return "";
+    }
 };
 
 const Metronome = () => {
-    const [specs, setSpecs] = useState({
-        type: "",
-        arch: "",
-        platform: "",
-        freemem: "",
-        totalmem: "",
-        hostname: ""
-    });
+    const [specs, setSpecs] = useState({});
     const [, refresh] = useState(0);
 
     return (
