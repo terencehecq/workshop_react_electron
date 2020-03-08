@@ -2,7 +2,7 @@ import React from "react";
 import { Route, BrowserRouter as Router, Link } from "react-router-dom";
 import "./css/App.min.css";
 import Metronome from "./metronome";
-import SystemeSpec from "./systemespec";
+import SystemSpecs from "./systemspecs";
 
 import metronomeImg from "./assets/metronome.svg";
 import systemeImg from "./assets/systeme.svg";
@@ -36,7 +36,7 @@ function App() {
                         <Metronome />
                     </Route>
                     <Route path="/systemespec">
-                        <SystemeSpec />
+                        <SystemSpecs />
                     </Route>
                 </Router>
             </main>

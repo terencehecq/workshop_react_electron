@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 
 const convertToMb = number => {
-    const mb = number / 1048576;
-    const rounded = mb.toFixed(1);
-    return rounded;
+    if (Number.isInteger(number)) {
+        const mb = number / 1048576;
+        const rounded = mb.toFixed(1);
+        return `${rounded} mb`;
+    } else {
+        return "";
+    }
 };
 
 const SystemSpecs = () => {
@@ -41,18 +45,16 @@ const SystemSpecs = () => {
     // console.log(specs);
 
     return (
-        <div>
+        <div className="systemspecs">
             <ul>
                 <li>OS: {specs.type}</li>
                 <li>Architecture: {specs.arch}</li>
                 <li>Platforme: {specs.platform}</li>
                 <li>Nom du PC: {specs.hostname}</li>
-                <li>Mémoire totale: {convertToMb(specs.totalmem)} bytes</li>
-                <li>Mémoire restante: {convertToMb(specs.freemem)} bytes</li>
+                <li>Mémoire totale: {convertToMb(specs.totalmem)}</li>
+                <li>Mémoire restante: {convertToMb(specs.freemem)}</li>
             </ul>
-            <div>
-                <button onClick={handleRefresh}>refresh</button>
-            </div>
+            <button onClick={handleRefresh}>refresh</button>
         </div>
     );
 };

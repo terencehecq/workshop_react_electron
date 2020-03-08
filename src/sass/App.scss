@@ -2,89 +2,109 @@
 @import "libs/colors";
 @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
 * {
-  outline: 0;
+    outline: 0;
 }
 body {
-  font-family: "Nunito", sans-serif;
-  background-color: $bg-color;
+    font-family: "Nunito", sans-serif;
+    background-color: $bg-color;
 
-  @include flex;
-  header {
-    position: relative;
-    h1 {
-      color: $base-color;
-      text-align: center;
+    @include flex;
+    header {
+        position: relative;
+        h1 {
+            color: $base-color;
+            text-align: center;
+        }
+        img {
+            position: absolute;
+            height: 50px;
+            width: 50px;
+        }
     }
-    img {
-      position: absolute;
-      height: 50px;
-      width: 50px;
-    }
-  }
 }
 
 .metronome {
-  text-align: center;
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 10px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 10px;
 }
 
 .bpm-slider {
-  display: flex;
-  font-size: 2rem;
+    display: flex;
+    font-size: 2rem;
 }
 
 .bpm-slider input {
-  width: 100%;
-  margin: 8px 20px;
-  height: 3rem;
-  align-self: center;
+    width: 100%;
+    margin: 8px 20px;
+    height: 3rem;
+    align-self: center;
 }
 
+.systemspecs button,
 .metronome button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 3rem;
-  height: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 3rem;
+    height: 100%;
 }
 
 .metronome button.startStop img {
-  width: 70px;
-  margin-bottom: 10px;
+    width: 70px;
+    margin-bottom: 10px;
 }
 
+.systemspecs button,
 .bpm-measure button {
-  background: rgb(78, 78, 78);
-  padding: 10px;
-  margin: 5px;
-  border: 1px solid #424242;
-  border-radius: 2px;
-  width: 100px;
-  color: $base-color;
-  font-size: 20px;
+    background: rgb(78, 78, 78);
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #424242;
+    border-radius: 2px;
+    width: 100px;
+    color: $base-color;
+    font-size: 20px;
 }
 
+.systemspecs button:hover,
 .metronome button.active {
-  background-color: rgb(141, 141, 141);
-  border-color: #777777;
+    background-color: rgb(141, 141, 141);
+    border-color: #777777;
+}
+
+.systemspecs {
+    border-radius: 5px;
+    border: solid 2px #6e5773;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    ul {
+        margin: 25px;
+        align-self: flex-start;
+        list-style: square;
+    }
+    button {
+        margin-bottom: 25px;
+    }
 }
 
 .navbar {
-  @include flex;
-  flex-direction: row;
-  margin: 50px;
-  .container-link {
-    border-radius: 5px;
-    border: solid 3px #6e5773;
-    margin: 10px;
-  }
-  .nav-link {
     @include flex;
-    text-decoration: none;
-    color: $base-color;
-    padding: 5px;
-    text-align: center;
-  }
+    flex-direction: row;
+    margin: 50px;
+    .container-link {
+        border-radius: 5px;
+        border: solid 3px #6e5773;
+        margin: 10px;
+    }
+    .nav-link {
+        @include flex;
+        text-decoration: none;
+        color: $base-color;
+        padding: 5px;
+        text-align: center;
+    }
 }
