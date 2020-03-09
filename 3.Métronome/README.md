@@ -274,4 +274,4 @@ const handlePulse = (e) => {
   }
 ```
 
-Etape suivante : [exporter l'application](https://github.com/terencehecq/workshop_react_electron/tree/terence/4.Exportation)
+Etape suivante : [exporter l'application](https://github.com/terencehecq/workshop_react_electron/tree/master/4.Exportation)
