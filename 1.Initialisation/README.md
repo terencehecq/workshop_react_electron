@@ -2,32 +2,13 @@
 
 ### 1. Installations et téléchargements
 
-Si ce n'est pas déjà fait, vous pouvez retrouvez la marche à suivre [ici](https://github.com/terencehecq/workshop_react_electron/tree/terence#Avant-le-workshop)
+Si ce n'est pas déjà fait, vous pouvez retrouvez la marche à suivre [ici](https://github.com/terencehecq/workshop_react_electron/tree/master#Avant-le-workshop)
 
 ### 2. Mettre en place la structure du projet
 
 - Après l'initialisation, vous avez la structure d'un projet React, voici les dossiers et fichiers à rajouter **depuis le dossier téléchargé** :
 
 ![Structure des fichiers](structure.png)
-
-<!--
-        |- node_modules
-        |- public
-        |- src
-            |- assets             <--
-                - click1.wav          <--
-                - click2.wav          <--
-                - play.png            <--
-                - pause.png           <--
-            - App.css                <-- (remplacer)
-            - electron-starter.js    <--
-            - preload.js             <--
-            - useInterval.js         <--
-            - ...
-        - .gitignore
-        - package.json
-        - README.md
- -->
 
 ### 3. Définir le rendu
 
@@ -62,4 +43,4 @@ mainWindow.loadURL("http://localhost:3000");
 "main" : "src/electron-starter.js"
 ```
 
-Etape suivante : [Communication avec la machine](https://github.com/terencehecq/workshop_react_electron/tree/terence/2.Communication)
+Etape suivante : [Communication avec la machine](https://github.com/terencehecq/workshop_react_electron/tree/master/2.Communication)
