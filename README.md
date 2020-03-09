@@ -52,10 +52,6 @@ Pour en savoir plus, rendez-vous sur [leur site internet](https://www.electronjs
 
 ## Le workshop
 
-[Suivre le fil conducteur](https://github.com/terencehecq/workshop_react_electron/tree/master/1.Initialisation)
-
-### Les étapes :
-
 1. [Initialiser le projet](https://github.com/terencehecq/workshop_react_electron/tree/master/1.Initialisation)
 2. [Communication avec la machine](https://github.com/terencehecq/workshop_react_electron/tree/master/2.Communication)
 3. [Le métronome](https://github.com/terencehecq/workshop_react_electron/tree/master/3.Métronome)
