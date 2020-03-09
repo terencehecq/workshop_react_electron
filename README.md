@@ -52,7 +52,6 @@ Pour en savoir plus, rendez-vous sur [leur site internet](https://www.electronjs
 
 ## Le workshop
 
-1. [Initialiser le projet](https://github.com/terencehecq/workshop_react_electron/tree/master/1.Initialisation)
-2. [Communication avec la machine](https://github.com/terencehecq/workshop_react_electron/tree/master/2.Communication)
-3. [Le métronome](https://github.com/terencehecq/workshop_react_electron/tree/master/3.Métronome)
-4. [Exporter l'application](https://github.com/terencehecq/workshop_react_electron/tree/master/4.Exportation)
+1. [Communication avec la machine](https://github.com/terencehecq/workshop_react_electron/tree/master/2.Communication)
+2. [Le métronome](https://github.com/terencehecq/workshop_react_electron/tree/master/3.Métronome)
+3. [Exporter l'application](https://github.com/terencehecq/workshop_react_electron/tree/master/4.Exportation)
