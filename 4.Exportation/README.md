@@ -87,7 +87,7 @@ Sachez que vous pouvez rajouter des flags au script d'Electron-builder pour lui 
 ### 2.3 Résulatat
 
 Une fois le code et la configuration terminé, on lance la commande `npm run build`.
-_Attention sur windows l'anti virus peut bloquer l'éxécution du script_.
+***Attention sur windows l'anti virus peut bloquer l'éxécution du script***.
 Et si tout se passe bien on obtient cela:
 ![builddist](assets/builddist.png)
 Le dossier build de React, et le dossir dist d'Electron:
