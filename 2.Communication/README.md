@@ -147,3 +147,5 @@ useEffect(() => {
     receiveSpecs(channels);
 }, []);
 ```
+
+Passons à l'[étape suivante](https://github.com/terencehecq/workshop_react_electron/edit/master/3.Métronome)
