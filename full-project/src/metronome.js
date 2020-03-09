@@ -44,6 +44,14 @@ const Metronome = () => {
       setPlaying(false)
     }
   }
+
+  const handleImage = () => {
+    if(playing){
+      return <img src={pause} alt="pause"></img>
+    }else{
+      return <img src={play} alt="play"></img>
+    }
+  }
   
   const playClick = () => {
     if(measure.count % measure.pulse === 0) {
@@ -78,7 +86,7 @@ const Metronome = () => {
           <button onClick={handlePlus}>+</button>
       </div>
       <button className="startStop" onClick={startStop}>
-        <img src={playing ? pause : play} alt="play/pause"></img>
+        {handleImage}
       </button>
       <div className="bpm-measure">
         <h4>Mesure : </h4>
