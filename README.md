@@ -15,7 +15,7 @@
 
 ## Avant le workshop
 
--   [Télécharger notre dossier d'assets](https://raw.githubusercontent.com/terencehecq/workshop_react_electron/dev/Projet/src/click.wav)
+-   [Télécharger notre dossier d'assets](https://www.transfernow.net/wX8jlw032020)
 -   Installer **Node.js**
 -   Installer **create-react-app**
 
@@ -30,35 +30,8 @@
           npx create-react-app electron-react
           cd electron-react
 
--   Installer **Electron**, **concurrently** & **wait-on**
+## Remplacer l'entièreté du package.json par ceci 
 
-        npm install --save-dev electron concurrently wait-on
-
--   Installer **cross-env**, **electron-is-dev**, **react-router-dom**
-
-        npm install cross-env electron-is-dev react-router-dom
-
-## Le package.json ressemblera à ça
-
--   Le package est identique pour tout le monde, à une différence prêt, le **script: dev**
-
--   Pour Mac/ Linux
-
-```json
-    "scripts": {
-            "dev": "concurrently \"BROWSER=none npm run react-start\" \" wait-on http://localhost:3000 && npm run electron\""
-        }
-```
-
--   Pour windows (une erreur sera générée avec la méthode set, elle n'a cependant aucune influence sur quoique ce soit.)
-
-```json
-    "scripts": {
-            "dev": "concurrently \"set BROWSER=none && npm run react-start\" \" wait-on http://localhost:3000 && npm run electron\""
-        }
-```
-
--   Le reste:
 
 ```json
 {
@@ -123,6 +96,24 @@
     },
     "main": "public/electron.js"
 }
+```
+
+-   Le package est identique pour tout le monde, à une différence près, le **script: dev**
+
+-   Pour Mac/ Linux
+
+```json
+    "scripts": {
+            "dev": "concurrently \"BROWSER=none npm run react-start\" \" wait-on http://localhost:3000 && npm run electron\""
+        }
+```
+
+-   Pour windows (une erreur sera générée avec la méthode set, elle n'a cependant aucune influence sur quoique ce soit.)
+
+```json
+    "scripts": {
+            "dev": "concurrently \"set BROWSER=none && npm run react-start\" \" wait-on http://localhost:3000 && npm run electron\""
+        }
 ```
 
 ## Introduction
