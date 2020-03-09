@@ -14,22 +14,18 @@
 
 -   Dans le dossier du repo : ```npm install```
 
--   Dans le package.json, il faut modifier le **script: dev**
+-   Dans le package.json, il faut modifier le **script "dev"**
 
 -   Pour Mac/ Linux
 
 ```json
-    "scripts": {
-            "dev": "concurrently \"BROWSER=none npm run react-start\" \" wait-on http://localhost:3000 && npm run electron\""
-        }
+"dev": "concurrently \"BROWSER=none npm run react-start\" \" wait-on http://localhost:3000 && npm run electron\""
 ```
 
 -   Pour windows (une erreur sera générée avec la méthode set, elle n'a cependant aucune influence sur quoique ce soit.)
 
 ```json
-    "scripts": {
-            "dev": "concurrently \"set BROWSER=none && npm run react-start\" \" wait-on http://localhost:3000 && npm run electron\""
-        }
+"dev": "concurrently \"set BROWSER=none && npm run react-start\" \" wait-on http://localhost:3000 && npm run electron\""
 ```
 
 ## Introduction 
