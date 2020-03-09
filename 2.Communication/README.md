@@ -2,6 +2,33 @@
 
 ### 1. La base
 
+-   Dans le fichier **electron.js**, créer la fonction **sendSpecs**, et l'appeler ensuite lorsque l'application est prête:
+
+```javascript
+function sendSpecs() {
+    // Send hardware specs
+
+    mainWindow.webContents.on("dom-ready", () => {
+        mainWindow.webContents.send("type", os.type());
+        mainWindow.webContents.send("arch", os.arch());
+        mainWindow.webContents.send("platform", os.platform());
+        mainWindow.webContents.send("freemem", os.freemem());
+        mainWindow.webContents.send("totalmem", os.totalmem());
+        mainWindow.webContents.send("hostname", os.hostname());
+    });
+}
+
+app.on("ready", () => {
+    sendSpecs();
+});
+```
+
+-   Dans le fichier **preload.js**, ajouter la ligne qui permettra d'utiliser la méthode IPCrender dans le **App.js**
+
+```javascript
+window.ipcRenderer = require("electron").ipcRenderer;
+```
+
 -   Dans le dossier **src** créer un document **systemspecs.js** et on y importe les fichiers qui nous seront utiles :
 
 ```javascript
