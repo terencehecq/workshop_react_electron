@@ -10,7 +10,7 @@
 
 -   Installer **Node.js**
 
--   Forker [ce repo](Lien ici) et le cloner sur votre machine
+-   Forker [ce repo](https://github.com/Debourgeo/workshop-electron-init) et le cloner sur votre machine
 
 -   Dans le dossier du repo : ```npm install```
 
