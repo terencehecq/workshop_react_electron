@@ -42,23 +42,6 @@ mainWindow.loadFile('index.html')
 mainWindow.loadURL('http://localhost:3000')
 ```
 
-### 4. Le package.json
-
-- Dans les scripts, nous ajoutons **electron** et un script **dev** avec *concurrently* & *wait-on* qui vont nous permettre 
-1. De lancer plusieurs scripts en une seule commande
-2. D'attendre qu'une action soit terminée avant de lancer la suivante.
-
-```json
-"scripts": {
-    // ...
-    "electron": "electron .",
-    "dev": "concurrently \"BROWSER=none npm start\" \" wait-on http://localhost:3000 && npm run electron\""
-},
-
-...
-
-"main" : "src/electron-starter.js"
-```
 
 
 Etape suivante : [Communication avec la machine](https://github.com/terencehecq/workshop_react_electron/tree/terence/2.Communication)
