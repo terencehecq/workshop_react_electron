@@ -6,16 +6,8 @@
 -   [Denis Bourgeois](https://github.com/Debourgeo)
 -   [Térence Hecq](https://github.com/terencehecq)
 
-## Table des matières :
-
--   [Avant le workshop](#Avant-le-workshop)
--   [Introduction](#Introduction)
--   [A propos d'Electron](#A-propos-d'Electron)
--   [Le workshop](#Le-workshop)
-
 ## Avant le workshop
 
--   [Télécharger notre dossier d'assets](https://www.transfernow.net/wX8jlw032020)
 -   Installer **Node.js**
 -   Installer **create-react-app**
 
@@ -25,10 +17,7 @@
 
         sudo npm install -g create-react-app
 
--   Initialiser le projet
-
-          npx create-react-app electron-react
-          cd electron-react
+-   Forker [ce repo](Lien ici)
 
 ## Remplacer l'entièreté du package.json par ceci 
 
