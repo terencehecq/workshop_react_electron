@@ -148,4 +148,4 @@ useEffect(() => {
 }, []);
 ```
 
-Passons à l'[étape suivante](https://github.com/terencehecq/workshop_react_electron/edit/master/3.Métronome)
+Passons à l'[étape suivante](https://github.com/terencehecq/workshop_react_electron/tree/master/3.Métronome)
