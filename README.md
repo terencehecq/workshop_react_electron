@@ -30,12 +30,11 @@
 
 ## Introduction 
 
-Durant ce workshop, nous réaliserons une application desktop grâce à **Electron.js** et **React.js** pour le front-end. Il sera divisé en 4 parties :
+Durant ce workshop, nous réaliserons une application desktop grâce à **Electron.js** et **React.js** pour le front-end. Il sera divisé en 3 parties :
 
-1. Initialisation et structure du projet
-2. Démonstration de la communication d'Electron avec la machine
-3. Réalisation d'un métronome en React
-4. Exportation de l'application 
+1. Démonstration de la communication d'Electron avec la machine
+2. Réalisation d'un métronome en React
+3. Exportation de l'application 
 
 
 ## A propos d'Electron
